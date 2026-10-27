@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReportDeckDataSchema",
+  "description": "Especificação dos dados de entrada para o gerador de relatórios PPTX",
+  "type": "object",
+  "properties": {
+    "account_name": { "type": "string" },
+    "period": { "type": "string" },
+    "spend_total": { "type": "number" },
+    "conversions_count": { "type": "integer" },
+    "cpa_actual": { "type": "number" },
+    "cpa_target": { "type": "number" },
+    "roas_blended": { "type": "number" },
+    "top_campaigns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "campaign_name": { "type": "string" },
+          "spend": { "type": "number" },
+          "conversions": { "type": "integer" },
+          "roas": { "type": "number" }
+        },
+        "required": ["campaign_name", "spend", "conversions"]
+      }
+    }
+  },
+  "required": ["account_name", "period", "spend_total", "conversions_count", "cpa_actual", "roas_blended"]
+}

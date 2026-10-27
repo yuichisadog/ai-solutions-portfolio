@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MarketingKPISchema",
+  "description": "Schema estruturado para validação de extração de KPIs de relatórios de tráfego pago via LLM",
+  "type": "object",
+  "properties": {
+    "account_name": {
+      "type": "string",
+      "description": "Nome da conta ou cliente analisado"
+    },
+    "reporting_period": {
+      "type": "object",
+      "properties": {
+        "start_date": { "type": "string", "format": "date" },
+        "end_date": { "type": "string", "format": "date" }
+      },
+      "required": ["start_date", "end_date"]
+    },
+    "spend_total": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Investimento total no período em Reais (BRL)"
+    },
+    "revenue_total": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Receita rastreada direta em Reais (BRL)"
+    },
+    "roas_blended": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Retorno sobre investimento em mídia (Receita / Gasto)"
+    },
+    "conversions_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Volume total de eventos de conversão validados"
+    },
+    "cpa_actual": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Custo por aquisição real registrado"
+    },
+    "cpa_target": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Custo por aquisição meta estabelecido no planejamento"
+    },
+    "status_alignment": {
+      "type": "string",
+      "enum": ["DENTRO_DA_META", "ALERTA", "CRITICO_FORA_DA_META"]
+    }
+  },
+  "required": [
+    "account_name",
+    "reporting_period",
+    "spend_total",
+    "conversions_count",
+    "cpa_actual",
+    "status_alignment"
+  ]
+}

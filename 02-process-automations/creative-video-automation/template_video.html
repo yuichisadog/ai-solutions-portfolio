@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Anúncio Dinâmico - Variação A/B Determinística</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1920px; /* Formato Story / Reels / TikTok 9:16 */
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 120px 80px;
+      overflow: hidden;
+    }
+    .badge {
+      background: #0ea5e9;
+      color: #040d1a;
+      font-weight: 800;
+      font-size: 32px;
+      padding: 16px 36px;
+      border-radius: 9999px;
+      align-self: flex-start;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .headline {
+      font-size: 84px;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-top: 40px;
+    }
+    .headline span {
+      color: #38bdf8;
+    }
+    .value-props {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin: 80px 0;
+    }
+    .prop-item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 42px;
+      font-weight: 600;
+    }
+    .prop-bullet {
+      width: 24px;
+      height: 24px;
+      background: #22c55e;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .cta-container {
+      background: #0284c7;
+      padding: 42px;
+      border-radius: 32px;
+      text-align: center;
+      font-size: 46px;
+      font-weight: 800;
+      box-shadow: 0 20px 40px rgba(14, 165, 233, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="badge" id="categoryBadge">Oportunidade B2B</div>
+    <div class="headline" id="mainHeadline">
+      Expanda sua Operação no <span>Melhor Ponto Comercial</span>
+    </div>
+  </div>
+
+  <div class="value-props">
+    <div class="prop-item">
+      <div class="prop-bullet"></div>
+      <div id="prop1">Fluxo qualificado de mais de 450 mil consumidores/mês</div>
+    </div>
+    <div class="prop-item">
+      <div class="prop-bullet"></div>
+      <div id="prop2">Condições especiais para franquias e lojas satélite</div>
+    </div>
+    <div class="prop-item">
+      <div class="prop-bullet"></div>
+      <div id="prop3">Retorno de investimento projetado com segurança</div>
+    </div>
+  </div>
+
+  <div class="cta-container" id="ctaButton">
+    Agende uma Apresentação com a Gestão
+  </div>
+</body>
+</html>

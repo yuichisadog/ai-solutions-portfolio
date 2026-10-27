@@ -1,0 +1,36 @@
+graph TD
+    subgraph Fontes_de_Dados ["Fontes de Dados (APIs Externas)"]
+        GADS["Google Ads API (GAQL)"]
+        META["Meta Ads Graph API (SDK)"]
+        GA4["Google Analytics 4 Data API"]
+    end
+
+    subgraph Backend_ETL ["Pipeline de Tratamento & Regras"]
+        INGEST["Ingestor de Métricas (Python)"]
+        VALID["Validador de Tipos & Pacing"]
+        CACHE["Cache Analítico & Agregação"]
+    end
+
+    subgraph Deploy_Render ["Hospedagem em Produção (Render)"]
+        API_SERVER["Servidor Web (FastAPI / Gunicorn)"]
+        DASH_UI["Interface de Monitoramento (HTML5/CSS3/JS)"]
+    end
+
+    subgraph Usuarios_Ativos ["Usuários do Sistema"]
+        USER_LEADER["Diretoria da Agência"]
+        USER_BUYER["Gestores de Mídia"]
+        USER_CLIENT["Clientes Externos"]
+    end
+
+    GADS --> INGEST
+    META --> INGEST
+    GA4 --> INGEST
+
+    INGEST --> VALID
+    VALID --> CACHE
+    CACHE --> API_SERVER
+
+    API_SERVER --> DASH_UI
+    DASH_UI --> USER_LEADER
+    DASH_UI --> USER_BUYER
+    DASH_UI --> USER_CLIENT
